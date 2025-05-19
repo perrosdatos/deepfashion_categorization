@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Prediction Result</title>
+</head>
+<body>
+  <h2>Prediction Results</h2>
+  <img src="{{ image_path }}" alt="Uploaded Image" style="max-width: 300px;"><br><br>
+  <table border="1">
+    <tr><th>Class</th><th>Probability</th></tr>
+    {% for label, prob in predictions.items() %}
+      <tr><td>{{ label }}</td><td>{{ '%.2f'|format(prob * 100) }}%</td></tr>
+    {% endfor %}
+  </table>
+  <br><a href="/">Try another</a>
+</body>
+</html>
